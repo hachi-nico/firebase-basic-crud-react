@@ -15,6 +15,13 @@ const AddForms = () => {
     });
   };
 
+  const bodyFormOnChange = (e) => {
+    setFormData({
+      ...formData,
+      body: e.target.value,
+    });
+  };
+
   const createTodoHandler = () => {
     const todoRef = firebase.database().ref('todo');
     const todo = {
@@ -24,13 +31,6 @@ const AddForms = () => {
     };
 
     todoRef.push(todo);
-  };
-
-  const bodyFormOnChange = (e) => {
-    setFormData({
-      ...formData,
-      body: e.target.value,
-    });
   };
 
   return (
